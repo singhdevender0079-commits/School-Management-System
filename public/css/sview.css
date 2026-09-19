@@ -1,0 +1,35 @@
+body{
+    padding: 0%;
+    margin: 0%;
+       font-family: 'Poppins', sans-serif;
+         background-color: rgb(216, 216, 243);
+}
+.search{
+    height: 30px;
+ width: 100%;
+  
+}
+input{
+    height:30px;
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+margin-top: 20px;
+margin-left: 20px;
+padding: 10px;
+border: 1px solid rgb(192, 191, 191);
+outline: none;
+}
+.content{
+    height: 50px;
+    width: 90%;
+    border: 1px solid  white;
+    border-radius: 10px;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+flex-direction: column;
+gap: 50px;
+}

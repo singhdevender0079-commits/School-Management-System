@@ -1,0 +1,537 @@
+body {
+
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 40px;
+    border-bottom: 1px solid rgb(178, 173, 173);
+    position: fixed;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 60px;
+    list-style: none;
+  
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 35px;
+    padding-right: 25px;
+}
+
+.left {
+    width: 16%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    border-right: 1px solid rgb(233, 230, 230);
+}
+
+li {
+    cursor: pointer;
+    color: rgb(138, 136, 136);
+}
+
+.mli:hover {
+    border-bottom: 1px solid;
+    color: black;
+}
+
+button{
+    cursor: pointer;
+    height: 35px;
+    width: 70px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(95, 95, 243);
+    color: white;
+
+
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+    background-color: white;
+}
+
+.sidebar {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 16%;
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgb(233, 230, 230);
+    overflow-y: auto;
+}
+
+.main {
+    margin-top: 50px;
+    margin-left: 16%;
+    width: 84%;
+    min-height: 200vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    background-color: rgb(240, 240, 255);
+}
+
+.sid {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 0;
+    margin: 40px 0 0 0;
+    list-style: none;
+    gap: 5px;
+}
+
+.sd {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+}
+
+.sd:hover {
+
+    background-color: rgba(0, 0, 0, 0.1);
+    color: black;
+
+    .fa-solid,.fa-file{
+        color: black;
+    }
+}
+
+.pic {
+    height: 40px;
+    width: 40px;
+    border: 1px solid rgb(88, 86, 86);
+    border-radius: 100%;
+    margin-left: 20px;
+
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+    gap: 10px;
+    height: 60px;
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    border-top: 1px solid rgb(233, 230, 230);
+}
+
+.fa-solid ,.fa-file{
+    margin-right: 15px;
+    font-size: 20px;
+    margin-left: 25px;
+    color: rgb(190, 190, 213);
+}
+
+
+.ad {
+    height: 300px;
+    width: 90%;
+    padding: 10px;
+    margin-top: 30px;
+
+    background-color: rgb(105, 105, 215);
+    border-radius: 15px;
+    font-weight: 200;
+
+}
+
+.ad:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+.first {
+    height: auto;
+
+    width: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.student {
+    height: 150px;
+    width: 50%;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.teacher {
+    height: 150px;
+    width: 50%;
+    background-color: white;
+    border-radius: 20px;
+      display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.data {
+    margin-top: 40px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.second {
+    height: auto;
+    width: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.classes {
+    height: 150px;
+    width: 50%;
+
+    background-color: white;
+    border-radius: 20px;
+      display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.report {
+    height: 150px;
+    width: 50%;
+    background-color: white;
+    border-radius: 20px;
+          display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.img1 {
+    height: 100%;
+    width: 50%;
+    border: 1px;
+
+}
+
+.m {
+    font-size: 33px;
+    color: white;
+    margin-left: 20px;
+    font-weight: 800;
+
+}
+
+.certi {
+    height: 30px;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.l {
+    margin-left: 20px;
+    color: white;
+
+}
+
+.btns {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    margin-left: 20px;
+    gap: 20px;
+
+}
+
+.bts {
+    height: 50px;
+    width: 150px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bt {
+    height: 50px;
+    width: 150px;
+
+    border-radius: 20px;
+    color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+.bt:hover,
+.bts:hover,
+#add:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+.dnum {
+    margin-left: 25px;
+    margin-top: 20px;
+
+    font-size: 20px;
+}
+
+.to {
+  font-size: 15px;
+    margin-top: 2px;
+    margin-left: 20px;
+}
+
+.student i {
+    font-size: 30px;
+    background-color: rgb(218, 218, 242);
+    height: 45px;
+    width: 50px;
+    border-radius: 10px;
+    color: rgb(105, 105, 243);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 20px
+}
+
+.teacher i {
+    font-size: 30px;
+    background-color: rgb(203, 225, 203);
+    height: 45px;
+    width: 50px;
+    border-radius: 10px;
+    color: rgb(30, 202, 30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 20px
+}
+
+.classes i {
+    font-size: 30px;
+    background-color: rgb(224, 205, 224);
+    height: 45px;
+    width: 50px;
+    border-radius: 10px;
+    color: rgb(206, 56, 206);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 20px
+}
+
+.report i {
+    font-size: 30px;
+    background-color: rgb(237, 219, 187);
+    height: 45px;
+    width: 50px;
+    border-radius: 10px;
+    color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 20px
+}
+
+.report:hover,
+.classes:hover,
+.student:hover,
+.teacher:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+.addi{
+    height: 50px;
+    width: 50px;
+  border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+margin-top: 20px;
+margin-right: 10px;
+}
+
+.addi:hover{
+      transform: scale(1.1);
+    transition: 0.3s;
+}
+.student > div:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.tn{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+.cn{
+     display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+.rn{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+.student .addi i{
+  color: rgb(105, 105, 243);
+    font-size: 25px;
+    margin: 0%;
+}
+.student .addi{
+     background-color: rgb(218, 218, 242);
+}
+
+.teacher .addi i{
+    color: rgb(30, 202, 30);
+    font-size: 25px;
+    margin: 0%;
+}
+.teacher .addi{
+     background-color: rgb(203, 225, 203);
+}
+
+.classes .addi i{
+    color: rgb(206, 56, 206);
+    font-size: 25px;
+    margin: 0%;
+}
+.classes .addi{
+     background-color: rgb(224, 205, 224);
+}
+.report .addi i{
+   color: orange;
+    font-size: 25px;
+    margin: 0%;
+}
+.report .addi{
+     background-color: rgb(237, 219, 187);
+     
+}
+ .sid a{
+    text-decoration: none;
+  color: none;
+  width: 100%;
+
+}
+a{
+    text-decoration: none;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+ margin-right: 50px;
+ margin-left: 50px;
+}
+
+.dropbtn {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    
+    width: 100px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+margin-top: 5px;
+margin-right: 30px;
+
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+      border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+  
+}

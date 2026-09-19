@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                <h3>Sms</h3>
+            </div>
+            <div class="right">
+                <ul>
+                    <li class="mli">Home</li>
+                    <li class="mli">Dashboard</li>
+                    <a href="/students/view">
+                        <li class="mli st">Students</li>
+                    </a>
+                    <li class="mli">Teachers</li>
+                    <li class="mli">Classes</li>
+                </ul>
+                <div class="dropdown">
+                    <button>Add New</button>
+    <div class="dropdown-content">
+        <a href="/students/add">Student</a>
+        <a href="/teachers/new">Teacher</a>
+        <a href="/class/add">Class</a>
+    </div>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--! middle -->
+    <div class="middle">
+        <div class="sidebar">
+            <ul class="sid">
+                <li class="sd"><i class="fa-solid fa-house"></i>Dashboard</li>
+               <a href="/students/view"><li class="sd"> <i class="fa-solid fa-user-group"></i>Students</li></a> 
+                <li class="sd"><i class="fa-solid fa-graduation-cap"></i>Teachers</li>
+                <li class="sd"> <i class="fa-solid fa-person-chalkboard"></i> Classes</li>
+                <li class="sd"> <i class="fa-regular fa-file"></i>Report</li>
+                <li class="sd"> <i class="fa-solid fa-gear"></i> Settings</li>
+            </ul>
+            <div class="profile">
+                <div class="pic"></div>
+                <div class="username">Admin</div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="ad">
+                <div class="certi">Greenfield Academy - Academic Year-2026 </div>
+                <span class="m">Welcome to School</span>
+                <br>
+                <span class="m">Management System</span>
+                <br>
+
+                <span class="l">Manage Studebts, Teachers and Classes Efiiciently- all from dashboard </span>
+                <div class="btns">
+                    <a href="/students/view">
+                        <div class="bt">View studenst</div>
+                    </a>
+                    <a href="/students/add">
+                        <div class="bts">Add students</div>
+                    </a>
+                </div>
+            </div>
+            <div class="data">
+                <div class="first">
+                    <div class="student">
+                        <div>
+                            <i class="fa-solid fa-user-group"></i>
+                            <div class="dnum">
+                                <%= count %>
+
+                            </div>
+                            <div class="to">Total students</div>
+                        </div>
+                        <div class="addi">
+                            <a href="/students/add"> <i class="fa-solid fa-plus"></i></a>
+                        </div>
+                    </div>
+                    <div class="teacher">
+                        <div class="tn">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <div class="dnum">
+                                <%= tcount %>
+                            </div>
+                            <div class="to">Total teachers</div>
+                        </div>
+                        <div class="addi">
+                            <a href="/teachers/add"> <i class="fa-solid fa-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="second">
+                    <div class="classes">
+                        <div class="cn">
+                            <i class="fa-solid fa-person-chalkboard"></i>
+                            <div class="dnum">
+                                <%= ccount %>
+                            </div>
+                            <div class="to">Total classes</div>
+                        </div>
+                        <div class="addi">
+                            <a href="/class/add"> <i class="fa-solid fa-plus"></i></a>
+                        </div>
+                    </div>
+                    <div class="report">
+                        <div class="rn">
+                            <i class="fa-regular fa-file"></i>
+                            <div class="dnum">12</div>
+                            <div class="to">Total reports</div>
+                        </div>
+                        <div class="addi">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+     <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+     <script src="js/home.js"></script> -->
+</body>
+
+</html>
