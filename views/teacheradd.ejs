@@ -7,25 +7,41 @@
        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="/css/tsadd.css" rel="stylesheet">
+        <link href="/css/navbar.css" rel="stylesheet">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
- 
-    <div class="main">
+        <%- include("partials/navbar") %>
+
+
+
+
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br>
         <form action="/teachers/add/submit" method="post">
-            <span>
-        <label for="tname"> Name</label>
-<input type="text" name="tname" placeholder="name"  id="text" >
-</span>
-<span>
-    <label for="mob">Mob no.</label>
-    <input type="text" name="mob" id="">
-</span>
-<span>
-    <label for="sallary">Salary</label>
-    <input type="text" name="sallary" id="">
-</span>
-<span><label for="sub">Subject</label>
-    <select name="sub" id="">
+<h3>Add new faculty</h3>
+<br>
+           <div class="mb-3">
+        <label for="tname" class="form-lable"> Name</label>
+<input type="text" name="tname" placeholder="name"  id="text"  class="form-control">
+</div>
+
+
+<div class="mb-3">
+    <label for="mob" class="form-lable">Mob no.</label>
+    <input type="text" name="mob" id="" class="form-control">
+    </div>
+<div class="mb-3">
+    <label for="sallary" >Salary</label>
+    <input type="text" name="sallary" id="" class="form-control">
+    </div>
+
+    <div class="row">
+<div class="mb-3 col-md-4">
+    <label for="sub" class="form-lable">Subject</label>
+    <select name="sub" id="" class="form-control">
           <option value="Punjabi">Punjabi</option>
         <option value="English">English</option>
         <option value="Hindi">Hindi</option>
@@ -34,22 +50,29 @@
         <option value="Social science">Social science</option>
         <option value="Sanskrit">Sanskrit</option>
     </select>
-</span>
-<span>
-    <label for="gender">Gender</label>
+    </div>
+<div class="mb-3 col-md-8">
+    <label for="gender" class="form-lable">Gender</label>
   
-  <select name="gender" id="">
+  <select name="gender" id="" class="form-control">
     <option value="Male">Male</option>
     <option value="Female">Female</option>
   </select>
-</span>
-<span>
-    <label for="date"></label>
-    <input type="date" name="date" id="">
-</span>
-<button>Submit</button>
+  </div>
+</div>
+
+<div class="mb-3">
+    <label for="date" class="form-lable">Joining date</label>
+    <input type="date" name="date" id="" class="form-control">
+
+    </div>
+<button class="btn add-btn offset-11" style="background-color: black;color: white; border: none; border-radius: 5px;">Submit</button>
         </form>
     </div>
-  
+</div>
+
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </body>
 </html>

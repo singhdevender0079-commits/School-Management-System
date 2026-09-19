@@ -8,36 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="style.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="left">
-                <h3>Sms</h3>
-            </div>
-            <div class="right">
-                <ul>
-                    <li class="mli">Home</li>
-                    <li class="mli">Dashboard</li>
-                    <a href="/students/view">
-                        <li class="mli st">Students</li>
-                    </a>
-                    <li class="mli">Teachers</li>
-                    <li class="mli">Classes</li>
-                </ul>
-                <div class="dropdown">
-                    <button>Add New</button>
-    <div class="dropdown-content">
-        <a href="/students/add">Student</a>
-        <a href="/teachers/new">Teacher</a>
-        <a href="/class/add">Class</a>
-    </div>
-                </div>
-            </div>
-            </div>
-        </nav>
-    </header>
+    <%- include("partials/navbar") %>
 
     <!--! middle -->
     <div class="middle">

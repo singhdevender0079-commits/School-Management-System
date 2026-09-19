@@ -1,0 +1,120 @@
+.site-navbar {
+    background-color: white;
+    border-bottom: 1px solid rgb(178, 173, 173);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 50px;
+    max-height: 50px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    font-family: 'Poppins', sans-serif;
+    z-index: 1000;
+}
+
+.site-navbar .left {
+    width: 16%;
+    height: 50px;
+    min-height: 50px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgb(233, 230, 230);
+}
+
+.site-navbar .brand {
+    color: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.site-navbar .right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 35px;
+    padding-right: 25px;
+    min-height: 50px;
+    box-sizing: border-box;
+}
+
+.site-navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-navbar .mli a {
+    color: rgb(138, 136, 136);
+    line-height: 50px;
+    text-decoration: none;
+}
+
+.site-navbar .mli a:hover {
+    border-bottom: 1px solid;
+    color: black;
+}
+
+.site-navbar button {
+    cursor: pointer;
+    height: 35px;
+    width: 80px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(95, 95, 243);
+    color: white;
+}
+
+.site-navbar .dropdown {
+    position: relative;
+}
+
+.site-navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 120px;
+    padding: 8px 0;
+    background-color: white;
+    border: 1px solid rgb(233, 230, 230);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.site-navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.site-navbar .dropdown-content a {
+    display: block;
+    padding: 8px 14px;
+    color: rgb(80, 80, 80);
+    text-decoration: none;
+}
+
+.site-navbar .dropdown-content a:hover {
+    background-color: rgb(240, 240, 255);
+}
+
+.site-navbar + .main {
+    margin-top: 0;
+}
+
+.site-navbar + .search {
+    margin-top: 0;
+}
+
+.site-navbar ~ .middle .main {
+    margin-top: 0;
+}

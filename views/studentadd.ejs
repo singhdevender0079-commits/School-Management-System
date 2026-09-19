@@ -1,74 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="/css/ssadd.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
+
 <body>
- 
-    <div class="main">
-        <form action="/students/add/submit" method="post">
-            <span>
-        <label for="sname">Student's name</label>
-<input type="text" name="sname" placeholder="Name"  id="text" >
-</span>
-<span><label for="father_name">Father's name</label>
-<input type="text" name="father_name" id="text">
-</span>
-<span>
-<label for="class_name">Class</label>
-<select name="class_name" required id="select">
-    <option value="1">5A</option>
-    <option value="2">5B</option>
-    <option value="3">6A</option>
-    <option value="4">6B</option>
-    <option value="5">7A</option>
-    <option value="6">7B</option>
-    <option value="7">8A</option>
-    <option value="8">8B</option>
-    <option value="9">9A</option>
-    <option value="10">9B</option>
-    <option value="11">10A</option>
-    <option value="12">10B</option>
-</select>
-</span>
-<br>
-<span>
-<label for="gender">Gender</label>
-<select name="gender" id="select">
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-</select>
-</span>
-<br>
-<span>
-<label for="rool_no "> Roll no.</label>
-<input type="text" name="rool_no" id="text" placeholder="Roll-No">
+    <%- include("partials/navbar") %>
 
-</span>
-<span>
-<label for="registration_date">Registration date</label>
-<input type="date" name="registration_date" id="date" placeholder="Registration-date">
-</span>
-<span>
-<label for="DOB"> Date of Birth</label>
-<input type="date" name="DOB" id="date">
-</span>
-<br>
 
-<span>
-<label for="medium">medium</label>
-<select name="medium" id="">
-    <option value="Hindi">Hindi</option>
-    <option value="English">English</option>
-</select>
-</span>
-<button>Submit</button>
-        </form>
-    </div>
-  
+
+
+<br>
+        <div class="row "  >
+            <div class="col-8 offset-2">
+<h3>Add new student</h3>
+          <br>
+            <form action="/students/add/submit" method="post">
+               <div class="mb-3">
+                    <label for="sname" class="form-lable">Student's name</label>
+                    <input type="text" name="sname" placeholder="Name" id="text" class="form-control">
+                    </div>
+              
+                    <div class="mb-3">
+            <label for="father_name" class="form-lable"> Father's name</label>
+                    <input type="text" name="father_name" id="text" class="form-control">
+              </div>
+
+               <div>
+                    <label for="class_name" class="form-lable">Class</label>
+                    <select name="class_name" required id="select" class="form-control">
+                        <option value="1">5A</option>
+                        <option value="2">5B</option>
+                        <option value="3">6A</option>
+                        <option value="4">6B</option>
+                        <option value="5">7A</option>
+                        <option value="6">7B</option>
+                        <option value="7">8A</option>
+                        <option value="8">8B</option>
+                        <option value="9">9A</option>
+                        <option value="10">9B</option>
+                        <option value="11">10A</option>
+                        <option value="12">10B</option>
+                    </select>
+               </div>
+                
+             <div class="mb-3">
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="select" class="form-control">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                
+              <div class="mb-3">
+                    <label for="rool_no " class="form-lable"> Roll no.</label>
+                    <input type="text" name="rool_no" id="text" placeholder="Roll-No" class="form-control">
+
+                </div>
+               
+                   <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="registration_date" class="form-lable">Registration date</label>
+                    <input type="date" name="registration_date" id="date" placeholder="Registration-date" class="form-control">
+              </div>
+
+           
+             <div class="mb-3 col-md-8 ">
+                    <label for="DOB" class="form-lable"> Date of Birth</label>
+                    <input type="date" name="DOB" id="date" class="form-control">
+              </div>
+                  </div>
+
+           <div class="mb-3 ">
+                    <label for="medium" class="form-lable">medium</label>
+                    <select name="medium" id="" class="form-control">
+                        <option value="Hindi">Hindi</option>
+                        <option value="English">English</option>
+                    </select>
+              <br>
+                <button class="btn add-btn offset-11" style="background-color: black;color: white; border: none; border-radius: 5px;">Submit</button>
+            </form>
+
+
+
+        </div>
+  </div>
+
+
+
+
+
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </body>
-</html>t
+
+</html>
