@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="/css/tsadd.css" rel="stylesheet">
+        <link href="/css/navbar.css" rel="stylesheet">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+        <%- include("partials/navbar") %>
+
+
+
+
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br>
+        <form method="post" action="/teachers/<%= teacher.id %>?_method=put">
+<h3>Edit faculty</h3>
+<br>
+           <div class="mb-3">
+        <label for="tname" class="form-lable"> Name</label>
+<input type="text" name="tname" placeholder="name"  id="text"  class="form-control" value="<%= teacher.name %>">
+</div>
+
+
+<div class="mb-3">
+    <label for="mob" class="form-lable">Mob no.</label>
+    <input type="text" name="mob" id="" class="form-control" value="<%= teacher.m_number %>">
+    </div>
+<div class="mb-3">
+    <label for="sallary" >Salary</label>
+    <input type="text" name="salary" id="" class="form-control" value="<%= teacher.salary %>">
+    </div>
+
+    <div class="row">
+ <div class="mb-3 col-md-4">
+
+                        <label for="sub" class="form-label">
+                            Subject
+                        </label>
+
+                        <select name="sub"
+                            id="sub"
+                            class="form-control">
+
+                            <option value="Punjabi"
+                                <%= teacher.subject === "Punjabi" ? "selected" : "" %>>
+                                Punjabi
+                            </option>
+
+                            <option value="English"
+                                <%= teacher.subject === "English" ? "selected" : "" %>>
+                                English
+                            </option>
+
+                            <option value="Hindi"
+                                <%= teacher.subject === "Hindi" ? "selected" : "" %>>
+                                Hindi
+                            </option>
+
+                            <option value="Math"
+                                <%= teacher.subject === "Math" ? "selected" : "" %>>
+                                Math
+                            </option>
+
+                            <option value="Science"
+                                <%= teacher.subject === "Science" ? "selected" : "" %>>
+                                Science
+                            </option>
+
+                            <option value="Social science"
+                                <%= teacher.subject === "Social science" ? "selected" : "" %>>
+                                Social science
+                            </option>
+
+                            <option value="Sanskrit"
+                                <%= teacher.subject === "Sanskrit" ? "selected" : "" %>>
+                                Sanskrit
+                            </option>
+
+                        </select>
+
+                    </div>
+
+  <div class="mb-3 col-md-8">
+
+                        <label for="gender" class="form-label">
+                            Gender
+                        </label>
+
+                        <select name="gender"
+                            id="gender"
+                            class="form-control">
+
+                            <option value="Male"
+                                <%= teacher.gender === "Male" ? "selected" : "" %>>
+                                Male
+                            </option>
+
+                            <option value="Female"
+                                <%= teacher.gender === "Female" ? "selected" : "" %>>
+                                Female
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+<div class="mb-3">
+    <label for="date" class="form-lable">Joining date</label>
+    <input type="date" name="date" id="" class="form-control"
+     value="<%= teacher.date_joining ? new Date(teacher.date_joining).toISOString().split('T')[0] : '' %>">
+
+    </div>
+<button class="btn add-btn offset-11" style="background-color: black;color: white; border: none; border-radius: 5px;">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="/css/navbar.css">
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+        <%- include("partials/navbar") %>
+
+    <div class="card offset-3 " style="width: 50rem; margin-top: 100px; ">
+
+  <div class="card-body"><div style="display: flex; justify-content: space-between;">
+    <h5 class="card-title"><%= student.name %></h5>
+<a href="/student/edit/<%= student.id %>" ><i class="fa-solid fa-pencil"></i></a>
+</div>
+  <ul class="list-group list-group-flush">
+      <li class="list-group-item"> Father's name - <%= student.father_name %></li>
+    <li class="list-group-item"> Class - <%= student.class_name %></li>
+    <li class="list-group-item">Sex - <%=student.gender  %></li>
+    <li class="list-group-item">Roll no. - <%= student.rool_no %></li>
+    <li class="list-group-item"> Registration date - <%=   new Date(student.registartion_date).toLocaleDateString("en-IN")%></li>
+    <li class="list-group-item">Dob - <%= new Date(student.dob).toLocaleDateString("en-IN") %></li>
+        <li class="list-group-item"> Medium - <%= student.medium %></li>
+  </ul>
+</div>
+</div>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</body>
+</html>

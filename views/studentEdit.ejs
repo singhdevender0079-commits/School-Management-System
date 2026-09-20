@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="/css/ssadd.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        
+</head>
+
+<body>
+    <%- include("partials/navbar") %>
+
+
+
+
+<br>
+        <div class="row "  >
+            <div class="col-8 offset-2">
+<h3>Edit <%= student.name  %> details</h3>
+          <br>
+            <form  method="post" action="/student/<%=student.id%>?_method=put">
+               <div class="mb-3">
+                    <label for="sname" class="form-lable">Student's name</label>
+                    <input type="text" name="sname" placeholder="Name" id="text" class="form-control" value="<%= student.name %>">
+                    </div>
+              
+                    <div class="mb-3">
+            <label for="father_name" class="form-lable"> Father's name</label>
+                    <input type="text" name="father_name" id="text" class="form-control" value="<%= student.father_name%>">
+              </div>
+
+             <div class="mb-3">
+    <label for="class_id" class="form-label">Class</label>
+
+    <select name="class_id" id="class_id" class="form-control" required>
+
+        <option value="1" <%= student.class_id == 1 ? "selected" : "" %>>5A</option>
+        <option value="2" <%= student.class_id == 2 ? "selected" : "" %>>5B</option>
+        <option value="3" <%= student.class_id == 3 ? "selected" : "" %>>6A</option>
+        <option value="4" <%= student.class_id == 4 ? "selected" : "" %>>6B</option>
+        <option value="5" <%= student.class_id == 5 ? "selected" : "" %>>7A</option>
+        <option value="6" <%= student.class_id == 6 ? "selected" : "" %>>7B</option>
+        <option value="7" <%= student.class_id == 7 ? "selected" : "" %>>8A</option>
+        <option value="8" <%= student.class_id == 8 ? "selected" : "" %>>8B</option>
+        <option value="9" <%= student.class_id == 9 ? "selected" : "" %>>9A</option>
+        <option value="10" <%= student.class_id == 10 ? "selected" : "" %>>9B</option>
+        <option value="11" <%= student.class_id == 11 ? "selected" : "" %>>10A</option>
+        <option value="12" <%= student.class_id == 12 ? "selected" : "" %>>10B</option>
+
+    </select>
+</div>
+        <div class="mb-3">
+
+    <label for="gender" class="form-label">
+        Gender
+    </label>
+
+    <select name="gender" id="gender" class="form-control" required>
+
+        <option value="Male"
+            <%= student.gender === "Male" ? "selected" : "" %>>
+            Male
+        </option>
+
+        <option value="Female"
+            <%= student.gender === "Female" ? "selected" : "" %>>
+            Female
+        </option>
+
+    </select>
+
+</div>
+                
+              <div class="mb-3">
+                    <label for="rool_no " class="form-lable"> Roll no.</label>
+                    <input type="text" name="rool_no" id="text" placeholder="Roll-No" class="form-control" value="<%= student.rool_no %>">
+
+                </div>
+               
+                   <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="registration_date" class="form-lable">Registration date</label>
+                    <input type="date" name="registration_date" id="date" placeholder="Registration-date" class="form-control"
+                    value="<%=student.registartion_date ? new Date(student.registartion_date).toISOString().split('T')[0] : '' %>">
+              </div>
+
+           
+             <div class="mb-3 col-md-8 ">
+                    <label for="DOB" class="form-lable"> Date of Birth</label>
+                    <input type="date" name="DOB" id="date" class="form-control"
+                    value="<%= student.dob ? new Date(student.dob).toISOString().split('T')[0] : '' %>">
+              </div>
+                  </div>
+
+           <div class="mb-3 ">
+                    <label for="medium" class="form-lable">medium</label>
+                    <select name="medium" id="" class="form-control" value="<%= student.gender %>">
+                        <option value="Hindi">Hindi</option>
+                        <option value="English">English</option>
+                    </select>
+              <br>
+                <button class="btn add-btn offset-11" style="background-color: black;color: white; border: none; border-radius: 5px;">Submit</button>
+            </form>
+
+
+
+        </div>
+  </div>
+
+
+
+
+
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</body>
+
+</html>
