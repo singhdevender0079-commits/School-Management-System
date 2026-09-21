@@ -38,20 +38,18 @@
 
                <div>
                     <label for="class_id" class="form-lable">Class</label>
-                    <select name="class_id" required id="select" class="form-control">
-                        <option value="1">5A</option>
-                        <option value="2">5B</option>
-                        <option value="3">6A</option>
-                        <option value="4">6B</option>
-                        <option value="5">7A</option>
-                        <option value="6">7B</option>
-                        <option value="7">8A</option>
-                        <option value="8">8B</option>
-                        <option value="9">9A</option>
-                        <option value="10">9B</option>
-                        <option value="11">10A</option>
-                        <option value="12">10B</option>
-                    </select>
+            <select name="class_id" required id="class_id" class="form-control">
+    <option value="">Select Class</option>
+
+    <% classes.forEach((classData) => { %>
+
+        <option value="<%= classData.id %>">
+            <%= classData.class_name %>
+        </option>
+
+    <% }) %>
+
+</select>
                </div>
                 
              <div class="mb-3">

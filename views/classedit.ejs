@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Add Class</title>
+    <title>Edit Class</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
@@ -27,11 +27,14 @@
 
         <div class="col-8 offset-2">
 
-            <h3>Add New Class</h3>
+            <h3>Edit Class</h3>
 
             <br>
 
-            <form action="/class/add/submit" method="POST">
+            <form
+                action="/class/<%= classData.id %>?_method=PUT"
+                method="POST"
+            >
 
                 <div class="mb-3">
 
@@ -43,7 +46,7 @@
                         type="text"
                         name="class_name"
                         id="class_name"
-                        placeholder="Enter class name (e.g. 5A)"
+                        value="<%= classData.class_name %>"
                         class="form-control"
                         required
                     >
@@ -62,7 +65,7 @@
                         border-radius: 5px;
                     "
                 >
-                    Add Class
+                    Update Class
                 </button>
 
                 <a

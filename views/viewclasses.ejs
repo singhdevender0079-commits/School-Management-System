@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>View Classes</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/sview.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <%- include("partials/navbar") %>
+
+
+    <table class="table custom-table">
+
+        <thead>
+
+            <tr>
+
+                <th scope=" "></th>
+                <th scope=" "></th>
+
+                <th scope="col">#</th>
+
+                <th scope="col">Class</th>
+
+                <th scope="col">Total Students</th>
+
+                <th scope=" "></th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            <% classes.forEach((classData, index) => { %>
+
+                <tr>
+
+                    <th scope="row"></th>
+
+                    <td></td>
+
+                    <th scope="row">
+                        <%= index + 1 %>
+                    </th>
+
+                    <td>
+                        <%= classData.class_name %>
+                    </td>
+
+                    <td>
+                        <%= classData.student_count %>
+                    </td>
+
+                    <td>
+
+                     
+                        <!-- Edit Button -->
+                         <div  style="display: flex; gap: 50px; align-items: center;" >
+                        <a
+                            href="/class/edit/<%= classData.id %>"
+                           class="btn btn-primary"
+                        >
+                            Edit
+                        </a>
+<form
+    action="/class/<%= classData.id %>?_method=DELETE"
+    method="POST"
+    onsubmit="return confirm('Deleting this class will also delete its students and class assignments. Are you sure?')"
+    style="display:inline;"
+>
+    <button type="submit" class="btn btn-danger">
+        <i class="fa-regular fa-trash-can"></i>
+    </button>
+</form>
+                        </div>
+                    </td>
+
+                </tr>
+
+            <% }) %>
+
+        </tbody>
+
+    </table>
+
+
+</body>
+
+<style>
+
+.custom-table tbody tr:nth-child(odd) > * {
+    background-color: #5992e1 !important;
+    color: white !important;
+}
+
+.custom-table tbody tr:nth-child(even) > * {
+    background-color: white !important;
+    color: black !important;
+}
+
+.custom-table thead tr > * {
+    background-color: #4b5563 !important;
+    color: white !important;
+}
+
+</style>
+
+</html>
+
+

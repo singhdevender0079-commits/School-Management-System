@@ -36,25 +36,32 @@
                     <input type="text" name="father_name" id="text" class="form-control" value="<%= student.father_name%>">
               </div>
 
-             <div class="mb-3">
-    <label for="class_id" class="form-label">Class</label>
+    <div class="mb-3">
 
-    <select name="class_id" id="class_id" class="form-control" required>
+    <label for="class_id" class="form-label">
+        Class
+    </label>
 
-        <option value="1" <%= student.class_id == 1 ? "selected" : "" %>>5A</option>
-        <option value="2" <%= student.class_id == 2 ? "selected" : "" %>>5B</option>
-        <option value="3" <%= student.class_id == 3 ? "selected" : "" %>>6A</option>
-        <option value="4" <%= student.class_id == 4 ? "selected" : "" %>>6B</option>
-        <option value="5" <%= student.class_id == 5 ? "selected" : "" %>>7A</option>
-        <option value="6" <%= student.class_id == 6 ? "selected" : "" %>>7B</option>
-        <option value="7" <%= student.class_id == 7 ? "selected" : "" %>>8A</option>
-        <option value="8" <%= student.class_id == 8 ? "selected" : "" %>>8B</option>
-        <option value="9" <%= student.class_id == 9 ? "selected" : "" %>>9A</option>
-        <option value="10" <%= student.class_id == 10 ? "selected" : "" %>>9B</option>
-        <option value="11" <%= student.class_id == 11 ? "selected" : "" %>>10A</option>
-        <option value="12" <%= student.class_id == 12 ? "selected" : "" %>>10B</option>
+    <select
+        name="class_id"
+        id="class_id"
+        class="form-control"
+        required
+    >
+
+        <% classes.forEach((classData) => { %>
+
+            <option
+                value="<%= classData.id %>"
+                <%= student.class_id == classData.id ? "selected" : "" %>
+            >
+                <%= classData.class_name %>
+            </option>
+
+        <% }) %>
 
     </select>
+
 </div>
         <div class="mb-3">
 

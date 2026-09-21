@@ -17,7 +17,18 @@
 
   <div class="card-body"><div style="display: flex; justify-content: space-between;">
     <h5 class="card-title"><%= teacher.name %></h5>
+    <div style="display: flex; gap: 20px; align-items: center;">
 <a href="/teacher/edit/<%= teacher.id %>" ><i class="fa-solid fa-pencil"></i></a>
+<form
+    action="/teacher/<%= teacher.id %>?_method=DELETE"
+    method="POST"
+    onsubmit="return confirm('Are you sure you want to delete this teacher?')"
+>
+    <button type="submit" class="btn btn-danger">
+        <i class="fa-regular fa-trash-can"></i>
+    </button>
+</form>
+</div>
 </div>
   <ul class="list-group list-group-flush">
       <li class="list-group-item"> Subject - <%=teacher.subject %></li>

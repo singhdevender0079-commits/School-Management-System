@@ -52,7 +52,20 @@ app.get("/home", (req, res) => {
 });
 // ! Student data
 app.get("/students/add", (req, res) => {
-    res.render("studentadd.ejs");
+
+    let sql = "SELECT * FROM classes ORDER BY id";
+
+    connection.query(sql, (err, result) => {
+
+        if (err) {
+            console.log(err);
+            return res.send("Database error");
+        }
+
+        res.render("studentadd.ejs", {
+            classes: result
+        });
+    });
 });
 app.post("/students/add/submit", (req, res) => {
     let { sname, father_name, class_id, gender, rool_no, registration_date, DOB, medium } = req.body;
@@ -90,12 +103,179 @@ app.post("/teachers/add/submit", (req, res) => {
     }
     res.redirect("/home");
 })
+
+//! class data
+
+
+// Add Class page
 app.get("/class/add", (req, res) => {
     res.render("addclass.ejs");
 });
 
 
+// Add Class
+app.post("/class/add/submit", (req, res) => {
 
+    let { class_name } = req.body;
+
+    let sql = `
+        INSERT INTO classes (class_name)
+        VALUES (?)
+    `;
+
+    connection.query(sql, [class_name], (err, result) => {
+
+        if (err) {
+            console.log(err);
+            return res.send("Database error");
+        }
+
+        console.log("Class added:", result);
+
+        res.redirect("/classes/view");
+    });
+});
+
+
+// View Classes
+app.get("/classes/view", (req, res) => {
+
+    let sql = `
+        SELECT 
+            classes.id,
+            classes.class_name,
+            COUNT(students.id) AS student_count
+        FROM classes
+        LEFT JOIN students
+        ON classes.id = students.class_id
+        GROUP BY classes.id, classes.class_name
+        ORDER BY classes.id
+    `;
+
+    connection.query(sql, (err, result) => {
+
+        if (err) {
+            console.log(err);
+            return res.send("Database error");
+        }
+
+        res.render("viewclasses.ejs", {
+            classes: result
+        });
+    });
+});
+
+
+// Edit Class page
+app.get("/class/edit/:id", (req, res) => {
+
+    let { id } = req.params;
+
+    let sql = `
+        SELECT *
+        FROM classes
+        WHERE id = ?
+    `;
+
+    connection.query(sql, [id], (err, result) => {
+
+        if (err) {
+            console.log(err);
+            return res.send("Database error");
+        }
+
+        if (result.length === 0) {
+            return res.send("Class not found");
+        }
+
+        res.render("classedit.ejs", {
+            classData: result[0]
+        });
+    });
+});
+
+
+// Update Class
+app.put("/class/:id", (req, res) => {
+
+    let { id } = req.params;
+
+    let { class_name } = req.body;
+
+    let sql = `
+        UPDATE classes
+        SET class_name = ?
+        WHERE id = ?
+    `;
+
+    connection.query(
+        sql,
+        [class_name, id],
+        (err, result) => {
+
+            if (err) {
+                console.log(err);
+                return res.send("Database error");
+            }
+
+            res.redirect("/classes/view");
+        }
+    );
+});
+
+// ! Delete Class
+
+app.delete("/class/:id", (req, res) => {
+
+    let { id } = req.params;
+
+    // First delete class-teacher relationships
+    let deleteRelations = `
+        DELETE FROM class_teachers
+        WHERE class_id = ?
+    `;
+
+    connection.query(deleteRelations, [id], (err, result) => {
+
+        if (err) {
+            console.log(err);
+            return res.send("Database error");
+        }
+
+        // Then delete students of this class
+        let deleteStudents = `
+            DELETE FROM students
+            WHERE class_id = ?
+        `;
+
+        connection.query(deleteStudents, [id], (err, result) => {
+
+            if (err) {
+                console.log(err);
+                return res.send("Database error");
+            }
+
+            // Finally delete class
+            let deleteClass = `
+                DELETE FROM classes
+                WHERE id = ?
+            `;
+
+            connection.query(deleteClass, [id], (err, result) => {
+
+                if (err) {
+                    console.log(err);
+                    return res.send("Database error");
+                }
+
+                res.redirect("/classes/view");
+
+            });
+
+        });
+
+    });
+});
 
 
 
@@ -160,9 +340,10 @@ app.get("/student/:id", (req, res) => {
 
 
 app.get("/student/edit/:id", (req, res) => {
+
     let { id } = req.params;
 
-    let sql = `
+    let studentSql = `
         SELECT students.*, classes.class_name
         FROM students
         JOIN classes
@@ -170,18 +351,38 @@ app.get("/student/edit/:id", (req, res) => {
         WHERE students.id = ?
     `;
 
-    connection.query(sql, [id], (err, result) => {
+    let classSql = `
+        SELECT *
+        FROM classes
+        ORDER BY id
+    `;
+
+    connection.query(studentSql, [id], (err, studentResult) => {
 
         if (err) {
             console.log(err);
             return res.send("Database error");
         }
 
-        res.render("studentEdit.ejs", {
-            student: result[0]
-        })
-        })
+        if (studentResult.length === 0) {
+            return res.send("Student not found");
+        }
 
+        connection.query(classSql, (err, classResult) => {
+
+            if (err) {
+                console.log(err);
+                return res.send("Database error");
+            }
+
+            res.render("studentEdit.ejs", {
+                student: studentResult[0],
+                classes: classResult
+            });
+
+        });
+
+    });
 });
 
 app.put("/student/:id", (req, res) => {
@@ -235,7 +436,24 @@ app.put("/student/:id", (req, res) => {
         }
     );
 });
+// ! Delete Student
 
+app.delete("/student/:id", (req, res) => {
+
+    let { id } = req.params;
+
+    let sql = "DELETE FROM students WHERE id = ?";
+
+    connection.query(sql, [id], (err, result) => {
+
+        if (err) {
+            console.log(err);
+            return res.send("Database error");
+        }
+
+        res.redirect("/students/view");
+    });
+});
 
 
 
@@ -350,4 +568,37 @@ app.put("/teachers/:id", (req, res) => {
             res.redirect("/teachers/view");
         }
     );
+});
+app.delete("/teacher/:id", (req, res) => {
+
+    let { id } = req.params;
+
+    let deleteRelation = `
+        DELETE FROM class_teachers
+        WHERE teacher_id = ?
+    `;
+
+    connection.query(deleteRelation, [id], (err, result) => {
+
+        if (err) {
+            console.log(err);
+            return res.send("Database error");
+        }
+
+        let deleteTeacher = `
+            DELETE FROM teachers
+            WHERE id = ?
+        `;
+
+        connection.query(deleteTeacher, [id], (err, result) => {
+
+            if (err) {
+                console.log(err);
+                return res.send("Database error");
+            }
+
+            res.redirect("/teachers/view");
+        });
+
+    });
 });
