@@ -28,17 +28,17 @@
             <form action="/students/add/submit" method="post">
                <div class="mb-3">
                     <label for="sname" class="form-lable">Student's name</label>
-                    <input type="text" name="sname" placeholder="Name" id="text" class="form-control">
+                    <input type="text" name="sname" placeholder="Name" id="text" class="form-control" required>
                     </div>
               
                     <div class="mb-3">
             <label for="father_name" class="form-lable"> Father's name</label>
-                    <input type="text" name="father_name" id="text" class="form-control">
+                    <input type="text" name="father_name" id="text" class="form-control" required>
               </div>
 
                <div>
                     <label for="class_id" class="form-lable">Class</label>
-            <select name="class_id" required id="class_id" class="form-control">
+            <select name="class_id" required id="class_id" class="form-control" required>
     <option value="">Select Class</option>
 
     <% classes.forEach((classData) => { %>
@@ -54,7 +54,7 @@
                 
              <div class="mb-3">
                     <label for="gender">Gender</label>
-                    <select name="gender" id="select" class="form-control">
+                    <select name="gender" id="select" class="form-control" required>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
@@ -62,26 +62,26 @@
                 
               <div class="mb-3">
                     <label for="rool_no " class="form-lable"> Roll no.</label>
-                    <input type="text" name="rool_no" id="text" placeholder="Roll-No" class="form-control">
+                    <input type="text" name="rool_no" id="text" placeholder="Roll-No" class="form-control" required>
 
                 </div>
                
                    <div class="row">
                 <div class="mb-3 col-md-4">
                     <label for="registration_date" class="form-lable">Registration date</label>
-                    <input type="date" name="registration_date" id="date" placeholder="Registration-date" class="form-control">
+                    <input type="date" name="registration_date" id="date" placeholder="Registration-date" class="form-control"required>
               </div>
 
            
              <div class="mb-3 col-md-8 ">
                     <label for="DOB" class="form-lable"> Date of Birth</label>
-                    <input type="date" name="DOB" id="date" class="form-control">
+                    <input type="date" name="DOB" id="date" class="form-control" required>
               </div>
                   </div>
 
            <div class="mb-3 ">
                     <label for="medium" class="form-lable">medium</label>
-                    <select name="medium" id="" class="form-control">
+                    <select name="medium" id="" class="form-control" required>
                         <option value="Hindi">Hindi</option>
                         <option value="English">English</option>
                     </select>

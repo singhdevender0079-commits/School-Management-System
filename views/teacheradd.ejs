@@ -1,78 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-       <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="/css/tsadd.css" rel="stylesheet">
-        <link href="/css/navbar.css" rel="stylesheet">
-         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="/css/navbar.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
+
 <body>
-        <%- include("partials/navbar") %>
+    <%- include("partials/navbar") %>
 
 
 
 
-    <div class="row">
-        <div class="col-8 offset-2">
-            <br>
-        <form action="/teachers/add/submit" method="post">
-<h3>Add new faculty</h3>
-<br>
-           <div class="mb-3">
-        <label for="tname" class="form-lable"> Name</label>
-<input type="text" name="tname" placeholder="name"  id="text"  class="form-control">
-</div>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <br>
+                <form action="/teachers/add/submit" method="post">
+                    <h3>Add new faculty</h3>
+                    <br>
+                    <div class="mb-3">
+                        <label for="tname" class="form-lable"> Name</label>
+                        <input type="text" name="tname" placeholder="name" id="text" class="form-control">
+                    </div>
 
 
-<div class="mb-3">
-    <label for="mob" class="form-lable">Mob no.</label>
-    <input type="text" name="mob" id="" class="form-control">
-    </div>
-<div class="mb-3">
-    <label for="sallary" >Salary</label>
-    <input type="text" name="sallary" id="" class="form-control">
-    </div>
+                    <div class="mb-3">
+                        <label for="mob" class="form-lable">Mob no.</label>
+                        <input type="text" name="mob" id="" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sallary">Salary</label>
+                        <input type="text" name="sallary" id="" class="form-control">
+                    </div>
 
-    <div class="row">
-<div class="mb-3 col-md-4">
-    <label for="sub" class="form-lable">Subject</label>
-    <select name="sub" id="" class="form-control">
-          <option value="Punjabi">Punjabi</option>
-        <option value="English">English</option>
-        <option value="Hindi">Hindi</option>
-        <option value="Math">Math</option>
-        <option value="Science">Science</option>
-        <option value="Social science">Social science</option>
-        <option value="Sanskrit">Sanskrit</option>
-    </select>
-    </div>
-<div class="mb-3 col-md-8">
-    <label for="gender" class="form-lable">Gender</label>
-  
-  <select name="gender" id="" class="form-control">
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-  </select>
-  </div>
-</div>
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="sub" class="form-lable">Subject</label>
+                            <select name="sub" id="" class="form-control">
+                                <option value="Punjabi">Punjabi</option>
+                                <option value="English">English</option>
+                                <option value="Hindi">Hindi</option>
+                                <option value="Math">Math</option>
+                                <option value="Science">Science</option>
+                                <option value="Social science">Social science</option>
+                                <option value="Sanskrit">Sanskrit</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <label for="gender" class="form-lable">Gender</label>
 
-<div class="mb-3">
-    <label for="date" class="form-lable">Joining date</label>
-    <input type="date" name="date" id="" class="form-control">
+                            <select name="gender" id="" class="form-control">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
 
-    </div>
-<button class="btn add-btn offset-11" style="background-color: black;color: white; border: none; border-radius: 5px;">Submit</button>
-        </form>
-    </div>
-</div>
+                    <div class="mb-3">
+                        <label for="date" class="form-lable">Joining date</label>
+                        <input type="date" name="date" id="" class="form-control">
+
+                    </div>
+                    <button class="btn add-btn offset-11"
+                        style="background-color: black;color: white; border: none; border-radius: 5px;">Submit</button>
+                </form>
+            </div>
+        </div>
 
 
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </body>
+
 </html>

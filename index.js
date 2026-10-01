@@ -3,7 +3,7 @@ const mysql = require("mysql2");
 const express = require("express");
 const path = require("path");
 const app = express();
-const method_override=require("method-override");
+const method_override = require("method-override");
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -334,7 +334,7 @@ app.get("/student/:id", (req, res) => {
         res.render("studentdata.ejs", {
             student: result[0]
         })
-        })
+    })
 
 });
 

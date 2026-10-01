@@ -11,7 +11,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        
+
 </head>
 
 <body>
@@ -20,106 +20,103 @@
 
 
 
-<br>
-        <div class="row "  >
+        <br>
+        <div class="row ">
             <div class="col-8 offset-2">
-<h3>Edit <%= student.name  %> details</h3>
-          <br>
-            <form  method="post" action="/student/<%=student.id%>?_method=put">
-               <div class="mb-3">
-                    <label for="sname" class="form-lable">Student's name</label>
-                    <input type="text" name="sname" placeholder="Name" id="text" class="form-control" value="<%= student.name %>">
-                    </div>
-              
+                <h3>Edit <%= student.name %> details</h3>
+                <br>
+                <form method="post" action="/student/<%=student.id%>?_method=put">
                     <div class="mb-3">
-            <label for="father_name" class="form-lable"> Father's name</label>
-                    <input type="text" name="father_name" id="text" class="form-control" value="<%= student.father_name%>">
-              </div>
+                        <label for="sname" class="form-lable">Student's name</label>
+                        <input type="text" name="sname" placeholder="Name" id="text" class="form-control"
+                            value="<%= student.name %>">
+                    </div>
 
-    <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="father_name" class="form-lable"> Father's name</label>
+                        <input type="text" name="father_name" id="text" class="form-control"
+                            value="<%= student.father_name%>">
+                    </div>
 
-    <label for="class_id" class="form-label">
-        Class
-    </label>
+                    <div class="mb-3">
 
-    <select
-        name="class_id"
-        id="class_id"
-        class="form-control"
-        required
-    >
+                        <label for="class_id" class="form-label">
+                            Class
+                        </label>
 
-        <% classes.forEach((classData) => { %>
+                        <select name="class_id" id="class_id" class="form-control" required>
 
-            <option
-                value="<%= classData.id %>"
-                <%= student.class_id == classData.id ? "selected" : "" %>
-            >
-                <%= classData.class_name %>
-            </option>
+                            <% classes.forEach((classData)=> { %>
 
-        <% }) %>
+                                <option value="<%= classData.id %>" <%=student.class_id==classData.id ? "selected" : ""
+                                    %>
+                                    >
+                                    <%= classData.class_name %>
+                                </option>
 
-    </select>
+                                <% }) %>
 
-</div>
-        <div class="mb-3">
+                        </select>
 
-    <label for="gender" class="form-label">
-        Gender
-    </label>
+                    </div>
+                    <div class="mb-3">
 
-    <select name="gender" id="gender" class="form-control" required>
+                        <label for="gender" class="form-label">
+                            Gender
+                        </label>
 
-        <option value="Male"
-            <%= student.gender === "Male" ? "selected" : "" %>>
-            Male
-        </option>
+                        <select name="gender" id="gender" class="form-control" required>
 
-        <option value="Female"
-            <%= student.gender === "Female" ? "selected" : "" %>>
-            Female
-        </option>
+                            <option value="Male" <%=student.gender==="Male" ? "selected" : "" %>>
+                                Male
+                            </option>
 
-    </select>
+                            <option value="Female" <%=student.gender==="Female" ? "selected" : "" %>>
+                                Female
+                            </option>
 
-</div>
-                
-              <div class="mb-3">
-                    <label for="rool_no " class="form-lable"> Roll no.</label>
-                    <input type="text" name="rool_no" id="text" placeholder="Roll-No" class="form-control" value="<%= student.rool_no %>">
+                        </select>
 
-                </div>
-               
-                   <div class="row">
-                <div class="mb-3 col-md-4">
-                    <label for="registration_date" class="form-lable">Registration date</label>
-                    <input type="date" name="registration_date" id="date" placeholder="Registration-date" class="form-control"
-                    value="<%=student.registartion_date ? new Date(student.registartion_date).toISOString().split('T')[0] : '' %>">
-              </div>
+                    </div>
 
-           
-             <div class="mb-3 col-md-8 ">
-                    <label for="DOB" class="form-lable"> Date of Birth</label>
-                    <input type="date" name="DOB" id="date" class="form-control"
-                    value="<%= student.dob ? new Date(student.dob).toISOString().split('T')[0] : '' %>">
-              </div>
-                  </div>
+                    <div class="mb-3">
+                        <label for="rool_no " class="form-lable"> Roll no.</label>
+                        <input type="text" name="rool_no" id="text" placeholder="Roll-No" class="form-control"
+                            value="<%= student.rool_no %>">
 
-           <div class="mb-3 ">
-                    <label for="medium" class="form-lable">medium</label>
-                    <select name="medium" id="" class="form-control" value="<%= student.gender %>">
-                        <option value="Hindi">Hindi</option>
-                        <option value="English">English</option>
-                    </select>
-              <br>
-                <button class="btn add-btn offset-11" style="background-color: black;color: white; border: none; border-radius: 5px;">Submit</button>
-            </form>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="registration_date" class="form-lable">Registration date</label>
+                            <input type="date" name="registration_date" id="date" placeholder="Registration-date"
+                                class="form-control"
+                                value="<%=student.registartion_date ? new Date(student.registartion_date).toISOString().split('T')[0] : '' %>">
+                        </div>
 
 
+                        <div class="mb-3 col-md-8 ">
+                            <label for="DOB" class="form-lable"> Date of Birth</label>
+                            <input type="date" name="DOB" id="date" class="form-control"
+                                value="<%= student.dob ? new Date(student.dob).toISOString().split('T')[0] : '' %>">
+                        </div>
+                    </div>
 
+                    <div class="mb-3 ">
+                        <label for="medium" class="form-lable">medium</label>
+                        <select name="medium" id="" class="form-control" value="<%= student.gender %>">
+                            <option value="Hindi">Hindi</option>
+                            <option value="English">English</option>
+                        </select>
+                        <br>
+                        <button class="btn add-btn offset-11"
+                            style="background-color: black;color: white; border: none; border-radius: 5px;">Submit</button>
+                </form>
+
+
+
+            </div>
         </div>
-  </div>
 
 
 
